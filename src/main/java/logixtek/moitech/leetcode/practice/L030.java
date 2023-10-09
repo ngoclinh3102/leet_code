@@ -8,7 +8,6 @@ import java.util.Map;
 public class L030 {
 
     public static void main(String[] args) {
-        // TODO : optimize runtime ( < 1000ms )
         System.out.println(findSubstring("barfoofoobarthefoobarman", "bar","foo","the")); // [6,9,12]
         System.out.println(findSubstring("wordgoodgoodgoodbestword", "word","good","best","good")); // [8]
     }
