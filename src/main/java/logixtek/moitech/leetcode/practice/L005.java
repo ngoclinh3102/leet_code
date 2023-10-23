@@ -16,7 +16,6 @@ public class L005 {
             int right = i;
             char c = chars[i];
 
-            while (left > 0 && chars[left - 1] == c) left--;
             while (right < chars.length - 1 && chars[right + 1] == c) right++;
 
             while (left > 0 && right < chars.length - 1 && chars[left - 1] == chars[right + 1]) {
