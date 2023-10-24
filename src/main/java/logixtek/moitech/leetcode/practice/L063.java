@@ -2,7 +2,6 @@ package logixtek.moitech.leetcode.practice;
 
 public class L063 {
 
-    hello
     public static void main(String[] args) {
         System.out.println(uniquePathsWithObstacles(new int[][]{{0,0,0},{0,1,0},{0,0,0}})); // 2
         System.out.println(uniquePathsWithObstacles(new int[][]{{1}})); // 0
