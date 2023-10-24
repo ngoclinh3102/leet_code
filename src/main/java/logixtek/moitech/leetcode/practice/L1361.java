@@ -6,7 +6,6 @@ import java.util.Queue;
 public class L1361 {
 
     public static void main(String[] args) {
-        // TODO - binary tree using arrays ??
     }
 
     public boolean validateBinaryTreeNodes(int n, int[] leftChild, int[] rightChild) {
