@@ -7,12 +7,11 @@ public class L154 {
     }
 
     public static int findMin(int[] nums) {
-        int min = nums[0];
-        for (int i = 0; i < nums.length; i++) {
-            if (min > nums[i]) {
-                min = nums[i];
-            }
-        }
-        return min;
+        return findMinInRange(nums, 0, nums.length - 1);
+    }
+
+    private static int findMinInRange(int[] nums, int left, int right) {
+        int mid = (left + right) >>> 1;
+        return 0;
     }
 }

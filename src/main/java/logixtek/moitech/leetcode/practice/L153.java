@@ -1,7 +1,5 @@
 package logixtek.moitech.leetcode.practice;
 
-import java.util.HashSet;
-
 public class L153 {
 
     public static void main(String[] args) {
@@ -24,7 +22,6 @@ public class L153 {
                 right = mid;
             }
             else {
-                            HashSet<Integer> set = new HashSet<>();
                 return Math.min(nums[left], nums[right]);
             }
         }
