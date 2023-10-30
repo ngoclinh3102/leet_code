@@ -8,17 +8,19 @@ public class L005 {
     }
 
     public static String longestPalindrome(String s) {
+        char[] chars = s.toCharArray();
+
         int start = 0;
         int end = 0;
-        char[] chars = s.toCharArray();
         for (int i = 0; i < chars.length; i++) {
+            if (i > 0 && chars[i] == chars[i-1]) continue;
+
             int left = i;
             int right = i;
-            char c = chars[i];
 
-            while (right < chars.length - 1 && chars[right + 1] == c) right++;
+            while (right + 1 < chars.length && chars[right + 1] == chars[i]) right++;
 
-            while (left > 0 && right < chars.length - 1 && chars[left - 1] == chars[right + 1]) {
+            while (left > 0 && right + 1 < chars.length && chars[left - 1] == chars[right + 1]) {
                 left--;
                 right++;
             }

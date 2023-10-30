@@ -1,5 +1,7 @@
 package logixtek.moitech.leetcode.practice;
 
+import java.util.PriorityQueue;
+
 public class L215 {
 
     public static void main(String[] args) {
@@ -9,6 +11,19 @@ public class L215 {
     }
 
     public static int findKthLargest(int[] nums, int k) {
-        return 0;
+        int n = nums.length;
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        int i = 0;
+        while (i < k) {
+            pq.add(nums[i++]);
+        }
+        while (i < n) {
+            if (pq.peek() < nums[i]) {
+                pq.poll();
+                pq.add(nums[i]);
+            }
+            i++;
+        }
+        return pq.peek();
     }
 }
