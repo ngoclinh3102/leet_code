@@ -1,27 +1,28 @@
 package logixtek.moitech.leetcode.practice;
 
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 
 public class App {
     public static void main(String[] args) {
-        Random random = new Random();
-        Runnable runnable = () -> { double i = random.nextDouble(1000) % random.nextDouble(1000);  };
-        int numThread = 100_000;
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < 65_536; i++) {
+            list.add(i);
+        }
 
         long start, end;
-
         start = System.currentTimeMillis();
-        for (int i = 0; i < numThread; i++) {
-            new Thread(runnable).start();
+        int sum = 0;
+        for (int num : list) {
+            sum += num;
         }
         end = System.currentTimeMillis();
-        System.out.println("Runtime old thread: " + (end - start));
+        System.out.println("Fori: Sum = " + sum + "; Runtime: " + (end - start) + ".");
 
+        //
         start = System.currentTimeMillis();
-        for (int i = 0; i < numThread; i++) {
-            Thread.startVirtualThread(runnable);
-        }
+        int sum2 = list.stream().reduce(0, Integer::sum);
         end = System.currentTimeMillis();
-        System.out.println("Runtime virtual thread: " + (end - start));
+        System.out.println("Stream: Sum = " + sum2 + "; Runtime: " + (end - start) + ".");
     }
 }
