@@ -1,6 +1,6 @@
 package logixtek.moitech.leetcode.practice;
 
-import logixtek.moitech.leetcode.practice.models.TreeNode;
+import logixtek.moitech.leetcode.practice.structure.TreeNode;
 
 public class L124 {
 

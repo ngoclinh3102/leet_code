@@ -1,6 +1,6 @@
 package logixtek.moitech.leetcode.practice;
 
-import logixtek.moitech.leetcode.practice.models.Trie;
+import logixtek.moitech.leetcode.practice.structure.Trie;
 
 public class L208 {
     public static void main(String[] args) {

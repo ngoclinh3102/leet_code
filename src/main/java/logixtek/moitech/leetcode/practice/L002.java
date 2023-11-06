@@ -1,6 +1,6 @@
 package logixtek.moitech.leetcode.practice;
 
-import logixtek.moitech.leetcode.practice.models.ListNode;
+import logixtek.moitech.leetcode.practice.structure.ListNode;
 
 import java.util.ArrayList;
 

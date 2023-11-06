@@ -2,7 +2,7 @@ package logixtek.moitech.leetcode.practice;
 
 import logixtek.moitech.leetcode.practice.structure.TreeNode;
 
-public class L98 {
+public class L098 {
     public static void main(String[] args) {
         TreeNode root;
         root = TreeNode.of(22);

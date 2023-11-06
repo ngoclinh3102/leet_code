@@ -1,6 +1,6 @@
 package logixtek.moitech.leetcode.practice;
 
-import logixtek.moitech.leetcode.practice.models.Node;
+import logixtek.moitech.leetcode.practice.structure.Node;
 
 public class L116 {
 

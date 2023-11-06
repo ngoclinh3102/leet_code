@@ -1,4 +1,4 @@
-package logixtek.moitech.leetcode.practice.models;
+package logixtek.moitech.leetcode.practice.structure;
 
 public class Trie {
     private final TrieNode root;

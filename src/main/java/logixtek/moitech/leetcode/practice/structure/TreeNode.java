@@ -1,4 +1,4 @@
-package logixtek.moitech.leetcode.practice.models;
+package logixtek.moitech.leetcode.practice.structure;
 
 public class TreeNode {
 
@@ -17,5 +17,13 @@ public class TreeNode {
         this.val = val;
         this.left = left;
         this.right = right;
+    }
+
+    public static TreeNode of(int val) {
+        return new TreeNode(val);
+    }
+
+    public static TreeNode of(int val, TreeNode left, TreeNode right) {
+        return new TreeNode(val, left, right);
     }
 }
