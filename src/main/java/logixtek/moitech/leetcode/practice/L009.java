@@ -13,15 +13,12 @@ public class L009 {
     }
 
     public static boolean isPalindrome(int x) {
-        if (x < 0) return false;
-        int size = 0;
-        while (x >= Math.pow(10, ++size));
-        while (x > 0) {
-            if ((int) (x / Math.pow(10, size-1)) != (x % 10)) return false;
-            size -= 2;
-            x /= 10;
-            x %= Math.pow(10, size);
+        int num = 0;
+        int temp = x;
+        while (temp > 0) {
+            num = 10 * num + temp % 10;
+            temp /= 10;
         }
-        return true;
+        return num == x;
     }
 }
