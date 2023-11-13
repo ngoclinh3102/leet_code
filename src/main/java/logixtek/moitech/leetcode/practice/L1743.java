@@ -71,22 +71,26 @@ public class L1743 {
         }
 
         int[] answer = new int[n+1];
+
         answer[0] = start;
-
         Node node = map.get(start);
-        if (node.left != null) node = node.left;
-        else node = node.right;
+        if (node.left != null) {
+            node = node.left;
+        }
+        else {
+            node = node.right;
+        }
 
-        int index = 1;
-        while (index <= n) {
-            answer[index] = node.value;
+        int index = 0;
+        while (node != null) {
+            answer[++index] = node.value;
+
             if (node.left != null && node.left.value != answer[index-1]) {
                 node = node.left;
             }
             else {
                 node = node.right;
             }
-            index++;
         }
 
         return answer;

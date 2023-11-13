@@ -5,7 +5,6 @@ import logixtek.moitech.leetcode.practice.structure.NestedInteger;
 import java.util.List;
 
 public class NestedIntegerImpl implements NestedInteger {
-
     private final int dummy;
 
     public NestedIntegerImpl(int dummy) {
