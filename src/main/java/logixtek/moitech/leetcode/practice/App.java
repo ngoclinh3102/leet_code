@@ -17,7 +17,7 @@ public class App {
             sum += num;
         }
         end = System.currentTimeMillis();
-        System.out.println("Fori: Sum = " + sum + "; Runtime: " + (end - start) + ".");
+        System.out.println("For i: Sum = " + sum + "; Runtime: " + (end - start) + ".");
 
         //
         start = System.currentTimeMillis();

@@ -2,8 +2,6 @@ package logixtek.moitech.leetcode.practice;
 
 import logixtek.moitech.leetcode.practice.structure.MountainArray;
 
-import java.util.Arrays;
-
 public class L1095 {
 
     public static void main(String[] args) {    }

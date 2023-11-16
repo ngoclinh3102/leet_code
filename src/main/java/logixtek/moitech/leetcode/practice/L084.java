@@ -1,18 +1,7 @@
 package logixtek.moitech.leetcode.practice;
 
-import java.util.Arrays;
-import java.util.Stack;
-
 public class L084 {
     public static void main(String[] args) {
-//        System.out.println(largestRectangleArea(2,4)); //4
-//        System.out.println(largestRectangleArea(0,9)); // 9
-//        System.out.println(largestRectangleArea(2,1,2)); // 3
-//        System.out.println(largestRectangleArea(4,2,0,3,2,5)); // 6
-//        System.out.println(largestRectangleArea(2,1,5,6,2,3)); //10
-//        System.out.println(largestRectangleArea(7,9,3,4,5,8,2,1,3)); // 18
-//        System.out.println(largestRectangleArea(7,9,3,4,5,0,8,2,1,3)); // ??
-//        System.out.println(largestRectangleArea(4,5,6)); // 12
         System.out.println(largestRectangleArea(1,1)); // 2
     }
 
@@ -40,12 +29,12 @@ public class L084 {
             nextSmaller[i] = next;
         }
 
-        int maxReactangle = 0;
+        int maxRectangle = 0;
         for (int i = 0; i < len; i++) {
             int width = nextSmaller[i] - prevSmaller[i] - 1;
-            maxReactangle = Math.max(maxReactangle, width * heights[i]);
+            maxRectangle = Math.max(maxRectangle, width * heights[i]);
         }
 
-        return maxReactangle;
+        return maxRectangle;
     }
 }
