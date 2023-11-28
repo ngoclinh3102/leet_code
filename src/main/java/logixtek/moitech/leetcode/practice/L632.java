@@ -7,60 +7,55 @@ import java.util.*;
 @Component("HARD")
 public class L632 {
     public static void main(String[] args) {
-        List<List<Integer>> nums2 = List.of(
+        List<List<Integer>> nums = List.of(
                 List.of(4, 10, 15, 24, 26),
                 List.of(0, 9, 12, 20),
                 List.of(5, 18, 22, 30)
         );
-        List<List<Integer>> nums = List.of(List.of(1));
         System.out.println(Arrays.toString(smallestRange(nums)));
     }
 
     public static int[] smallestRange(List<List<Integer>> nums) {
         int k = nums.size();
 
-        PriorityQueue<Number> queue = new PriorityQueue<>(Comparator.comparingInt(i -> i.value));
+        PriorityQueue<Number> bench = new PriorityQueue<>(Comparator.comparingInt(i -> i.value));
         for (int i = 0; i < k; i++) {
-            queue.offer(Number.of(i, 0, nums.get(i).get(0)));
+            bench.offer(Number.of(i, 0, nums.get(i).get(0)));
         }
 
-        int memberInWindow = 0;
-        int[] frequencyInWindow = new int[k];
+        int numOfList = 0;
+        int[] frequency = new int[k];
         LinkedList<Number> window = new LinkedList<>();
 
         int[] range = {-100_000, 100_000};
 
-        while (queue.size() > 0) {
-            Number current = queue.poll();
+        while (bench.size() > 0) {
+            Number high = bench.poll();
 
-            window.offer(current);
-            frequencyInWindow[current.list]++;
+            window.offer(high);
 
-            if (frequencyInWindow[current.list] == 1) {
-                memberInWindow++;
-            }
+            frequency[high.list]++;
 
-            if (memberInWindow == k) {
-                while (window.size() > 0) {
-                    Number low = window.pollFirst();
-                    frequencyInWindow[low.list]--;
+            if (frequency[high.list] == 1) numOfList++;
 
-                    if (frequencyInWindow[low.list] == 0) {
-                        int high = window.size() > 0 ? window.peekLast().value : low.value;
-                        if (high - low.value < range[1] - range[0]) {
-                            range[1] = high;
-                            range[0] = low.value;
-                        }
+            while (numOfList == k && window.size() > 0) {
+                Number low = window.poll();
 
-                        memberInWindow--;
-                        break;
+                frequency[low.list]--;
+
+                if (frequency[low.list] == 0) {
+                    numOfList--;
+
+                    if (high.value - low.value < range[1] - range[0]) {
+                        range[1] = high.value;
+                        range[0] = low.value;
                     }
                 }
             }
 
-            int nextIndex = current.index + 1;
-            if (nextIndex < nums.get(current.list).size()) {
-                queue.offer(Number.of(current.list, nextIndex, nums.get(current.list).get(nextIndex)));
+            int nextIndex = high.index + 1;
+            if (nextIndex < nums.get(high.list).size()) {
+                bench.offer(Number.of(high.list, nextIndex, nums.get(high.list).get(nextIndex)));
             }
         }
 
