@@ -1,6 +1,5 @@
 package logixtek.moitech.leetcode.practice;
 
-import java.util.Arrays;
 import java.util.PriorityQueue;
 
 public class L2971 {
